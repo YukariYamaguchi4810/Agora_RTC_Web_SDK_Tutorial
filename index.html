@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <h1>Send and Receive Media Streams</h1>
+
+    <b>Enter your Agora App ID</b>
+    <input type="text" id="appid">
+
+    <b>Enter your token</b>
+    <input type="text" id="token">
+
+    <b>Enter your ID</b>
+    <input type="text" id="uid">
+
+    <form>
+        <b> Select your camera </b>
+        <select id = "cameraList" onchange = "getVideoDeviceId()" >
+            <option> ---Select your camera--- </option>
+        </select>
+    </form>
+    <p>The deviceId of your selected camera is: </p>
+    <p id="videoDeviceId"></p>
+
+    <form>
+        <b> Select your microphone </b>
+        <select id="microphoneList" onchange="getAudioDeviceId()">
+            <option> ---Select your microphone--- </option>
+        </select>
+    </form>
+    <p>The deviceId of your selected microphone is: </p>
+    <p id="audioDeviceId"></p>
+
+    <p>Your connection state is: </p>
+    <p id="state"></p>
+
+    <div id="play-area"></div>
+    <p>Local preview</p>
+
+    <button id = "join" type = "button">Join Channel</button>
+    <button id = "leave" type = "button">Leave Channel</button>
+
+    <p>Remote view</p>
+    <p id="remotestate"> </p>
+    <div id = "remote-video"></div>
+
+    <script src="./assets/AgoraRTC_N-4.15.1.js"></script>
+    <script src="./index.js"></script>
+</body>
+</html>
